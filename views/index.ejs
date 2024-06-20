@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/mystyle.css">
+<!-- Bootstrap 5 CSS -->
+<link href="/css/bootstrap.min.css" rel="stylesheet">   
+     
+</head>
+<body>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <form   method="POST" action="/search" class="d-flex" role="search">
+            <input 
+            name="searchText"  
+            class="form-control me-2" 
+            type="search" placeholder="Search"
+             aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">NAME</th>
+        <th scope="col">AGE</th>
+        <th scope="col">ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% if (arr.length > 0) { %>
+            <% arr.forEach((element, index) => { %>
+                <tr>
+                    <th scope="row"><%= index %></th>
+                    <td><%= element.usernameee %></td>
+                    <td><%= element.age %></td>
+                    <td>
+                        <div class="table_dispay">
+                            <form method="POST" action="/edit/<%= element._id %>?_method=DELETE">
+                                <button type="submit" class="btn btn-danger">DELETE</button>
+                            </form>
+                            <a href="../edit.html/<%= element._id %>" class="btn btn-success">EDIT</a>
+                            <a href="../view.html/<%= element._id %>">         
+                                 <img src="/svg/eye.svg" alt="Icon">
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+            <% }) %>
+        <% } else { %>
+            <tr>
+                <td colspan="4">No data available</td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>
+
+
+<!-- Bootstrap 5 JS -->
+<script src="/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

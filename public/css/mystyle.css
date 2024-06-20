@@ -1,0 +1,12 @@
+.username{
+    display: flex;
+    align-items: center; /* Aligns the items vertically centered */
+}
+
+.username input{
+    margin-left: 100px;
+}
+
+.table_dispay{
+    display: flex
+}

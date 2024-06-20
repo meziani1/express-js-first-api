@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">   
+</head>
+
+<body>
+     <form method="POST" action="/edit/<%= arr._id %>?_method=PUT">
+        <div class="username" >
+            <div > <h1>USERNAME</h1> </div>     
+           <input value="<%= arr.usernameee %>" name="usernameee"  type="text"> </input> 
+        </div>
+        <div  class="username" >
+            <div  > <h1> AGE </h1> </div>     
+           <input  value="<%= arr.age%>" name="age"  type="text"> </input> 
+        </div> 
+        <button type="submit" class="btn btn-success">  Update </button>
+      </form>
+    
+
+
+    <form method="POST" action="/edit/<%= arr._id %>?_method=DELETE">
+        <button type="submit" class="btn btn-danger">Delete </button>
+    </form>
+
+ 
+
+<script src="/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+   
+        
+
+
