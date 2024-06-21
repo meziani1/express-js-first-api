@@ -1,12 +1,49 @@
-.username{
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+.form-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.form-container input, .form-container button {
+    font-size: 20px;
+    padding: 10px;
+}
+.form-container button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 50px;
+}
+.form-container button:hover {
+    background-color: #0056b3;
+}
+.table_display {
     display: flex;
-    align-items: center; /* Aligns the items vertically centered */
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
 }
-
-.username input{
-    margin-left: 100px;
+.table_display form {
+    margin: 0; /* Remove default margin */
+    display: inline-block; /* Ensure it stays inline */
 }
-
-.table_dispay{
-    display: flex
+.table_display a {
+    display: inline-block; /* Ensure it stays inline */
+}
+.table_display img {
+    width: 24px;
+    height: 24px;
 }

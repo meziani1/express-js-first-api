@@ -4,10 +4,16 @@ const getHome = (req, res) => {
   res.render("home.ejs", {});
 };
 
-const getIndex = (req, res) => {
-  Mydata.find()
+const getIndex =async (req, res) => {
+  const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 2;
+  const count = await Mydata.countDocuments();
+  Mydata.find().skip(( page-1)*limit).limit(limit)
+
     .then((result) => {
-      res.render("index.ejs", { arr: result });
+      res.render("index.ejs", { arr: result ,
+        currentPage: page,
+        totalPages: Math.ceil(count / limit)});
     })
     .catch((err) => {
       console.log(err);

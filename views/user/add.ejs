@@ -5,30 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/mystyle.css">
-    <style>
-        input,button{
-            font-size: 33px;
-        }
-    </style>
+  
+    <link href="/css/bootstrap.min.css" rel="stylesheet">   
+
 </head>
 <body>
    
    
-  <form action="/add.html" method="post"> 
-    <div class="username" >
-        <div > <h1>USERNAME</h1> </div>     
-       <input name="usernameee"  type="text"> </input> 
+    <div class="form-container">
+        <form action="/add.html" method="post"> 
+            <div class="form-group">
+                <label for="usernameee"><h1>Username</h1></label>
+                <input name="usernameee" id="usernameee" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="age"><h1>Age</h1></label>
+                <input name="age" id="age" type="text" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Send to DB</button>
+        </form>
     </div>
-    <div class="username" >
-        <div > <h1> AGE </h1> </div>     
-       <input name="age"  type="text"> </input> 
-    </div>
-          <br>
-         <br>
-
-        <button > Send to DB</button>
-  </form>
-
 
 
    
